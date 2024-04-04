@@ -1,4 +1,4 @@
-"""Dog sitting service
+"""Dog sitting service v2
 Ask if the user wants to drop a dog off, it should ask for the dog's name and add it to a list
 By Daniel Choe
 """
