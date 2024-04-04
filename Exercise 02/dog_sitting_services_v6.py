@@ -16,7 +16,7 @@ def int_checker(question_01):
 
 def str_checker(string, question_02):
     """Checks if the everything in the input is in the alpahbet"""
-    error = "\n Sorry, you must enter a name (letters)\n"
+    error = "\n Sorry, you must enter a name (letters and No full names)\n"
     while string.isalpha() is False:
         print(error)
         string = str(input(question_02))
@@ -61,8 +61,8 @@ while choice != 5:
     print()
 
     if choice == 1:
-        dogs_to_be_added = str(input("What is your dog's name?: "))
-        dog_name = str_checker(dogs_to_be_added, "What is your dog's name?: ").title()
+        dogs_to_be_added = str(input("What is your dog's first name?: "))
+        dog_name = str_checker(dogs_to_be_added, "What is your dog's first name?: ").title()
         dog_list.append(dog_name)
         print(f"Your dog '{dog_name}' has been entered into our list")
         DOGS_IN_CARE += 1
@@ -71,12 +71,12 @@ while choice != 5:
         if dog_list == []:
             print("There are no dogs under our care right now")
         else:
-            dogs_to_be_removed = str(input("What is your dog's name?: "))
-            dog_name = str_checker(dogs_to_be_removed, "What is your dog's name?: ").title()
+            dogs_to_be_removed = str(input("What is your dog's first name?: "))
+            dog_name = str_checker(dogs_to_be_removed, "What is your dog's first name?: ").title()
             while dog_name not in dog_list:
                 print(f"The name '{dog_name}' is not on our list")
-                dogs_to_be_removed = str(input("What is your dog's name?: "))
-                dog_name = str_checker(dogs_to_be_removed, "What is your dog's name?: ").title()
+                dogs_to_be_removed = str(input("What is your dog's first name?: "))
+                dog_name = str_checker(dogs_to_be_removed, "What is your dog's first name?: ").title()
             dog_list.remove(dog_name)
             print(f"Your dog '{dog_name}' has been taken out of our list")
             DOGS_IN_CARE -= 1
