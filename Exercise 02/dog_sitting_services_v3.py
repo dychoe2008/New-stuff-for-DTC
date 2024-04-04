@@ -1,5 +1,6 @@
 """Dog sitting service
-Ask if the user wants to drop a dog off, it should ask for the dog's name and add it to a list
+Ask if the user wants to pick a dog up, it should ask for the dog's name and remove it from the list.
+If the name is not there it should say that
 By Daniel Choe
 """
 
@@ -49,12 +50,20 @@ while choice != 5:
         dog_name = str_checker(dogs_to_be_added, "What is your dog's name?: ")
         dog_list.append(dog_name)
         print(dog_list)
+
     elif choice==2:
-        pickUp()
+        dogs_to_be_removed = str(input("What is your dog's name?: "))
+        dog_name = str_checker(dogs_to_be_removed, "What is your dog's name?: ")
+        while dog_name not in dog_list:
+            print("The name of this dog is not on our list")
+            dogs_to_be_removed = str(input("What is your dog's name?: "))
+            dog_name = str_checker(dogs_to_be_removed, "What is your dog's name?: ")
+        dog_list.remove(dog_name)
+        print(f"Your dog {dog_name} has been taken out of our list")
+
     elif choice==3:
         calcCost()
     elif choice==4:
         printRoll()
     else:
         quit()
-s
