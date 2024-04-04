@@ -62,8 +62,8 @@ while choice != 5:
         print(f"Your dog {dog_name} has been taken out of our list")
 
     elif choice==3:
-        calcCost()
+        print()
     elif choice==4:
-        printRoll()
+        print()
     else:
         quit()
