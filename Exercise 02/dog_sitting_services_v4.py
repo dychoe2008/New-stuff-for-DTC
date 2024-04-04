@@ -94,6 +94,6 @@ while choice != 5:
                   f"We charge ${DAYS * DOGS_IN_CARE * INCOME_PER_DOG}")
 
     elif choice==4:
-        printRoll()
+        print()
     else:
         quit()
