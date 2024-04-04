@@ -1,5 +1,5 @@
-"""Dog sitting service
-Calculate and show the income for looking after the current number of dogs for an inputted number of hours
+"""Dog sitting service v5
+Show a list of the dogs in care
 By Daniel Choe
 """
 
