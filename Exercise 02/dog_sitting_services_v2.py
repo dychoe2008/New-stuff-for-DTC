@@ -50,11 +50,10 @@ while choice != 5:
         dog_list.append(dog_name)
         print(dog_list)
     elif choice==2:
-        pickUp()
+        print()
     elif choice==3:
-        calcCost()
+        print()
     elif choice==4:
-        printRoll()
+        print()
     else:
         quit()
-s
