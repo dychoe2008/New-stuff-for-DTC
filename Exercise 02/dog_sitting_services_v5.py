@@ -66,7 +66,6 @@ while choice != 5:
         dog_name = str_checker(dogs_to_be_added, "What is your dog's name?: ")
         dog_list.append(dog_name)
         print(f"Your dog '{dog_name}' has been entered into our list")
-        print(f"List of Dog's in our care\n{dog_list}")
         DOGS_IN_CARE += 1
 
     elif choice==2:
@@ -81,7 +80,6 @@ while choice != 5:
                 dog_name = str_checker(dogs_to_be_removed, "What is your dog's name?: ")
             dog_list.remove(dog_name)
             print(f"Your dog '{dog_name}' has been taken out of our list")
-            print(f"List of Dog's in our care\n{dog_list}")
             DOGS_IN_CARE -= 1
     elif choice==3:
         if dog_list == []:
@@ -94,6 +92,6 @@ while choice != 5:
                   f"We charge ${DAYS * DOGS_IN_CARE * INCOME_PER_DOG}")
 
     elif choice==4:
-        printRoll()
+        print(f"List of Dog's in our care\n{dog_list}")
     else:
         quit()
