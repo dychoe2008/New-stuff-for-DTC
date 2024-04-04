@@ -10,7 +10,10 @@ def int_checker(question):
     while not num:
         try:
             num = int(input(question))
-            return num
+            if num > 5 or num < 1:
+                print(error)
+            else:
+                return num
         except ValueError:
             print(error)
 
