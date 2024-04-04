@@ -1,5 +1,5 @@
 """Dog sitting service v5
-Show a list of the dogs in care
+Show a list of the dogs in care and showing a "good bye" message once the user exits
 By Daniel Choe
 """
 
@@ -34,7 +34,6 @@ def int_checker_02(question_03):
             print(error)
 
 
-
 # Main Routine
 choice = 0
 error = "\n Sorry, you must enter an integer that's from 1-5 and it must be a whole number\n"
@@ -61,14 +60,14 @@ while choice != 5:
         choice = int_checker("Enter your choice (number between 1 and 5): ")
     print()
 
-    if choice==1:
+    if choice == 1:
         dogs_to_be_added = str(input("What is your dog's name?: "))
         dog_name = str_checker(dogs_to_be_added, "What is your dog's name?: ")
         dog_list.append(dog_name)
         print(f"Your dog '{dog_name}' has been entered into our list")
         DOGS_IN_CARE += 1
 
-    elif choice==2:
+    elif choice == 2:
         if dog_list == []:
             print("There are no dogs under our care right now")
         else:
@@ -81,7 +80,7 @@ while choice != 5:
             dog_list.remove(dog_name)
             print(f"Your dog '{dog_name}' has been taken out of our list")
             DOGS_IN_CARE -= 1
-    elif choice==3:
+    elif choice == 3:
         if dog_list == []:
             print("There are no dogs under our care right now")
         else:
@@ -91,7 +90,10 @@ while choice != 5:
                   f"We will take care for {DAYS} days\n",
                   f"We charge ${DAYS * DOGS_IN_CARE * INCOME_PER_DOG}")
 
-    elif choice==4:
-        print(f"List of Dog's in our care\n{dog_list}")
+    elif choice == 4:
+        if dog_list == []:
+            print("There are no dogs under our care right now")
+        else:    
+            print(f"Here is a list of Dog's in our care\n{dog_list}")
     else:
-        quit()
+        print("******** Thank you for using our Dog Sitting Services ********")
