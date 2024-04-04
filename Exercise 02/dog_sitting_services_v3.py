@@ -1,4 +1,4 @@
-"""Dog sitting service
+"""Dog sitting service v3
 Ask if the user wants to pick a dog up, it should ask for the dog's name and remove it from the list.
 If the name is not there it should say that
 By Daniel Choe
