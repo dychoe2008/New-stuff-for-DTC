@@ -3,35 +3,37 @@ Fixing bugs, like dog names in option 2, spaces when entering a full name
 By Daniel Choe
 """
 
+# pylint: disable = c0103
+
 def int_checker(question_01):
     """Checks if the input was a null or string repeats until it receives a int."""
-    error = "\n Sorry, you must enter an integer that's from 1-5 and it must be a whole number\n"
+    invaild = "\n Sorry, you must enter an integer that's from 1-5 and it must be a whole number\n"
     num = ""
     while not num:
         try:
             num = int(input(question_01))
             return num
         except ValueError:
-            print(error)
+            print(invaild)
 
 def str_checker(string, question_02):
     """Checks if the everything in the input is in the alpahbet"""
-    error = "\n Sorry, you must enter a name (letters and No full names)\n"
+    invaild = "\n Sorry, you must enter a name (letters and No full names)\n"
     while string.isalpha() is False:
-        print(error)
+        print(invaild)
         string = str(input(question_02))
     return string
 
 def int_checker_02(question_03):
     """Checks if the input was a null or string repeats until it receives a int."""
-    error = "\n Sorry, you must enter an integer and it must be a whole number\n"
+    invaild = "\n Sorry, you must enter an integer and it must be a whole number\n"
     num = ""
     while not num:
         try:
             num = int(input(question_03))
             return num
         except ValueError:
-            print(error)
+            print(invaild)
 
 
 # Main Routine
@@ -42,7 +44,7 @@ INCOME_PER_DOG = 22.50
 DAYS = 0
 DOGS_IN_CARE = 0
 
-while choice != 5: 
+while choice != 5:
     print("-----------------------------------------------------------------------")
     print("******** Welcome to DogsRus ********")
     print("What would you like to do? Please choose one of the items below")
@@ -68,7 +70,7 @@ while choice != 5:
         DOGS_IN_CARE += 1
 
     elif choice == 2:
-        if dog_list == []:
+        if len(dog_list) == 0:
             print("There are no dogs under our care right now")
         else:
             dogs_to_be_removed = str(input("What is your dog's first name?: "))
@@ -76,12 +78,12 @@ while choice != 5:
             while dog_name not in dog_list:
                 print(f"The name '{dog_name}' is not on our list")
                 dogs_to_be_removed = str(input("What is your dog's first name?: "))
-                dog_name = str_checker(dogs_to_be_removed, "What is your dog's first name?: ").title()
+                dog_name=str_checker(dogs_to_be_removed, "What is your dog's first name?: ").title()
             dog_list.remove(dog_name)
             print(f"Your dog '{dog_name}' has been taken out of our list")
             DOGS_IN_CARE -= 1
     elif choice == 3:
-        if dog_list == []:
+        if len(dog_list) == 0:
             print("There are no dogs under our care right now")
         else:
             charge = int_checker_02("How many days do you want us to take care of your dogs?: ")
@@ -91,9 +93,9 @@ while choice != 5:
                   f"We charge ${DAYS * DOGS_IN_CARE * INCOME_PER_DOG}")
 
     elif choice == 4:
-        if dog_list == []:
+        if len(dog_list) == 0:
             print("There are no dogs under our care right now")
-        else:    
+        else:
             print(f"Here is a list of Dog's in our care\n{dog_list}")
     else:
         print("******** Thank you for using our Dog Sitting Services ********")
