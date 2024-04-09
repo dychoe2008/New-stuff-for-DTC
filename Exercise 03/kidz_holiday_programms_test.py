@@ -1,6 +1,5 @@
-"""Kidz holiday programme v4
-Once the user enters "X" the program then displays the total number 
-and average age of the children in each holiday programme.
+"""Kidz holiday programme test
+NOT IMPORTANT
 By Daniel
 """
 # pylint: disable = c0103
