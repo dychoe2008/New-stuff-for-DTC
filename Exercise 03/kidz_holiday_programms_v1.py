@@ -1,4 +1,4 @@
-"""Kidz holiday programme
+"""Kidz holiday programme v1
 User is asked to input the name of the holiday programme which the child is attending.
 By Daniel
 """
