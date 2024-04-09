@@ -6,7 +6,7 @@ By Daniel
 
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
-    invaild = "\n Sorry, you must enter F,A or X\n"
+    invaild = "\nSorry, you must enter F,A or X\n"
     while string.isalpha() is False:
         print(invaild)
         string = str(input(question_01))
@@ -15,8 +15,9 @@ def str_checker(string, question_01):
 
 #Main Routine
 keep_running = True
-ERROR = "Sorry, you must enter F,A or X\n"
+ERROR = "\nSorry, you must enter F,A or X\n"
 while keep_running:
+    repeat = "No"
     print("-----------------------------------------------------------------------")
     print("******** Welcome to Holiday Kidz Programme! ********")
     print("What would you like to do? Please choose one of the items below")
@@ -28,14 +29,18 @@ while keep_running:
     print()
     choice = input("Enter your choice (enter F,A or X): ")
     choice_check = str_checker(choice, "Enter your choice (enter F,A or X): ").title()
-    print()
+
     if choice_check == "X":
         keep_running = False
-    elif choice_check == "F":
-        print("F")
-    elif choice_check == "A":
-        print("A")
-    else:
-        print(ERROR)
-        choice = input("Enter your choice (enter F,A or X): ")
-        choice_check = str_checker(choice, "Enter your choice (enter F,A or X): ").title()
+
+    while repeat != "Go":
+        if choice_check == "F":
+            print(f"{choice_check}")
+            repeat = "Go"
+        elif choice_check == "A":
+            print(f"{choice_check}")
+            repeat = "Go"
+        else:
+            print(ERROR)
+            choice = input("Enter your choice (enter F,A or X): ")
+            choice_check = str_checker(choice, "Enter your choice (enter F,A or X): ").title()
