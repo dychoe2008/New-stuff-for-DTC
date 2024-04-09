@@ -28,9 +28,9 @@ ERROR_01 = "\n Sorry, you must enter F,A or X\n"
 ERROR_02 = "\n Sorry, you must enter an age from 5-15\n"
 keep_running = True
 C_A_list_F = []
-num_C_F = 0
+total_C_F = 0
 C_A_list_A = []
-num_C_A = 0
+total_C_A = 0
 
 while keep_running:
     repeat = "Go"
@@ -50,37 +50,41 @@ while keep_running:
         if choice_check == "X":
             repeat = "Stop"
             keep_running = False
-            total_C_F = len(C_A_list_F)
-            average_A_F = sum(C_A_list_F) // len(C_A_list_F)
-            total_C_A = len(C_A_list_A)
-            average_A_A = sum(C_A_list_A) // len(C_A_list_A)
 
-            if num_C_F == 0 and num_C_A == 0:
+            if total_C_F == 0 and total_C_A == 0:
                 print("We have no children signed up for either activities")
-            elif num_C_F == 0:
+            elif total_C_F == 0:
+                total_C_A = len(C_A_list_A)
+                average_A_A = sum(C_A_list_A) // len(C_A_list_A)
                 print("We have no children signed up for 'Fun in the Sun'")
-                print(f"A:\nTotal Children = {total_C_A}\nAverage age = {average_A_A}")
-            elif num_C_A == 0:
+                print(f"A:\nTotal Children = {total_C_A}\nAverage age = {round(average_A_A)}")
+            elif total_C_A == 0:
+                total_C_F = len(C_A_list_F)
+                average_A_F = sum(C_A_list_F) // len(C_A_list_F)
                 print("We have no children signed up for 'Active Kidz'")
-                print(f"F:\nTotal Children = {total_C_F}\nAverage age = {average_A_F}")
+                print(f"F:\nTotal Children = {total_C_F}\nAverage age = {round(average_A_F)}")
             else:
-                print(f"F:\nTotal Children = {total_C_F}\nAverage age = {average_A_F}")
-                print(f"A:\nTotal Children = {total_C_A}\nAverage age = {average_A_A}")
-                print("Thank you for singing up to our programms!")
+                total_C_F = len(C_A_list_F)
+                average_A_F = sum(C_A_list_F) // len(C_A_list_F)
+                total_C_A = len(C_A_list_A)
+                average_A_A = sum(C_A_list_A) // len(C_A_list_A)
+                print(f"F:\nTotal Children = {total_C_F}\nAverage age = {round(average_A_F)}")
+                print(f"A:\nTotal Children = {total_C_A}\nAverage age = {round(average_A_A)}")
+                print("Thank you for signing up to our programms!")
 
         elif choice_check == "F":
             repeat = "Stop"
-            child_age = int_checker("Enter your childs age (5-15 only): ")
+            child_age = int_checker("Enter the age your child (5-15 only): ")
             while child_age < 5 or child_age > 15:
                 print(ERROR_02)
-                child_age = int_checker("Enter your childs age (5-15 only): ")
+                child_age = int_checker("Enter the age your child (5-15 only): ")
             C_A_list_F.append(child_age)
         elif choice_check == "A":
             repeat = "Stop"
-            child_age = int_checker("Enter your childs age: ")
+            child_age = int_checker("Enter the age your child (5-15 only): ")
             while child_age < 5 or child_age > 15:
                 print(ERROR_02)
-                child_age = int_checker("Enter your childs age: ")
+                child_age = int_checker("Enter the age your child (5-15 only): ")
             C_A_list_A.append(child_age)
         else:
             print(ERROR_01)
