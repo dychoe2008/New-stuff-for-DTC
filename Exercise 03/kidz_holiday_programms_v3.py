@@ -1,4 +1,4 @@
-"""Kidz holiday programme
+"""Kidz holiday programme v3
 For each holiday programme, keeps a record of the number of children who attended the program 
 and a total (count/total) of their ages.
 By Daniel
@@ -61,6 +61,7 @@ while keep_running:
             while child_age < 5 or child_age > 15:
                 print(ERROR_02)
                 child_age = int_checker("Enter your childs age: ")
+            child_age_list.append(child_age)
         else:
             print(ERROR_01)
             choice = input("Enter your choice (enter F,A or X): ")
