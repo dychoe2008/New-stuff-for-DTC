@@ -4,20 +4,6 @@ By Daniel
 """
 # pylint: disable = c0103
 
-# def str_checker_01(question_01):
-#     """Checks if the input was a null or interger repeats until it receives a str."""
-#     invaild = "\n Sorry, you must enter F,A or X\n"
-#     stri = ""
-#     end_task = input(question_01)
-#     if end_task == "X":
-#         return end_task
-#     while stri:
-#         try:
-#             stri = str(input(question_01))
-#             return stri
-#         except ValueError:
-#             print(invaild)
-
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
     invaild = "\n Sorry, you must enter F,A or X\n"
