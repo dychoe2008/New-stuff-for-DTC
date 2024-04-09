@@ -64,9 +64,7 @@ while keep_running:
                 print("We have no children signed up for 'Active Kidz'")
                 print(f"F:\nTotal Children = {total_C_F}\nAverage age = {round(average_A_F)}")
             else:
-                total_C_F = len(C_A_list_F)
                 average_A_F = sum(C_A_list_F) // len(C_A_list_F)
-                total_C_A = len(C_A_list_A)
                 average_A_A = sum(C_A_list_A) // len(C_A_list_A)
                 print(f"F:\nTotal Children = {total_C_F}\nAverage age = {round(average_A_F)}")
                 print(f"A:\nTotal Children = {total_C_A}\nAverage age = {round(average_A_A)}")
