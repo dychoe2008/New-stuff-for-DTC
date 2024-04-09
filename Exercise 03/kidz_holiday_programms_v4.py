@@ -50,16 +50,16 @@ while keep_running:
         if choice_check == "X":
             repeat = "Stop"
             keep_running = False
+            total_C_F = len(C_A_list_F)
+            total_C_A = len(C_A_list_A)
 
             if total_C_F == 0 and total_C_A == 0:
                 print("We have no children signed up for either activities")
             elif total_C_F == 0:
-                total_C_A = len(C_A_list_A)
                 average_A_A = sum(C_A_list_A) // len(C_A_list_A)
                 print("We have no children signed up for 'Fun in the Sun'")
                 print(f"A:\nTotal Children = {total_C_A}\nAverage age = {round(average_A_A)}")
             elif total_C_A == 0:
-                total_C_F = len(C_A_list_F)
                 average_A_F = sum(C_A_list_F) // len(C_A_list_F)
                 print("We have no children signed up for 'Active Kidz'")
                 print(f"F:\nTotal Children = {total_C_F}\nAverage age = {round(average_A_F)}")
