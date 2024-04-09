@@ -1,4 +1,4 @@
-"""Kidz holiday programme
+"""Kidz holiday programme v2
 User is then asked to input the child's age in years.
 By Daniel
 """
